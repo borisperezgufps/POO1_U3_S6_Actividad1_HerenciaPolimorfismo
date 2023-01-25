@@ -23,15 +23,15 @@ public class Docente extends Empleado {
 		this.categoria = categoria;
 	}
 
-	@Override
-	public double calcularSalario() {
+	
+	public double calcularSalarioDocente() {
 		double salario = -1;
 		double valorHora = obtenerValorHora(getCategoria());
 		
 		if(valorHora>0) {		
 			salario = valorHora * getNumeroHoras();
 		}else {
-			System.err.println("El administrativo "+getNombres()+" no tiene categoría asociada.");
+			System.err.println("El docente "+getNombres()+" no tiene categorï¿½a asociada.");
 		}
 		
 		return salario;

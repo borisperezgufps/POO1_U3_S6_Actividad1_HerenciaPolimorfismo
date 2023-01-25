@@ -33,9 +33,14 @@ public class InstitucionEducativa {
 	 * @param fechaIngreso
 	 * @param categoria String con las opciones "Planta", "Catedratico" y "Auxiliar"
 	 */
-	public void agregarDocente(int dni, String nombre, String apellido, int edad, Calendar fechaIngreso, String categoria, int numeroHorasTrabajadas) {
+	public void agregarDocente(int dni, String nombre, 
+			String apellido, int edad, 
+			Calendar fechaIngreso, String categoria, 
+			int numeroHorasTrabajadas) {
 		
-		if(categoria.equals("Planta") || categoria.equals("Catedratico") || categoria.equals("Auxiliar")){
+		if(categoria.equals("Planta") || 
+				categoria.equals("Catedratico") || 
+				categoria.equals("Auxiliar")){
 			
 			Docente d = new Docente();
 			d.setDni(dni);
@@ -60,12 +65,14 @@ public class InstitucionEducativa {
 			contador++;
 			
 		}else {
-			System.err.println("La categoría ingresada no es válida. ");
+			System.err.println("La categorï¿½a ingresada no es vï¿½lida. ");
 			return;
 		}
 	}
 	
-	public void agregarAdministrativo(int dni, String nombre, String apellido, int edad, Calendar fechaIngreso, String oficina) {
+	public void agregarAdministrativo(int dni, String nombre, 
+			String apellido, int edad, Calendar fechaIngreso, 
+			String oficina) {
 		
 		if(oficina.equals("Planeacion") || oficina.equals("Coordinacion") || oficina.equals("Rectoria")){
 			
@@ -91,12 +98,14 @@ public class InstitucionEducativa {
 			contador++;
 			
 		}else {
-			System.err.println("La oficina ingresada no es válida. ");
+			System.err.println("La oficina ingresada no es vï¿½lida. ");
 			return;
 		}
 	}
 	
-	public void agregarPersonalLimpieza(int dni, String nombre, String apellido, int edad, Calendar fechaIngreso) {
+	public void agregarPersonalLimpieza(int dni, String nombre, 
+			String apellido, int edad, 
+			Calendar fechaIngreso) {
 			
 		Limpieza d = new Limpieza(valorTurno);
 		d.setDni(dni);
@@ -125,8 +134,16 @@ public class InstitucionEducativa {
 	public String imprimirInformacionEmpleados() {
 		String sb = "";
 		
-		for(Empleado e : empleados) {
-			sb += e.getApellidos() + ", " + e.getNombres() + "\n";
+		for(int t=0;t<empleados.length;t++) {
+			Empleado e = empleados[t];
+			if(e!=null) {
+				
+				sb += e.getApellidos() + 
+					", " + 
+					e.getNombres() + 
+					"\n";
+			}
+			
 		}
 		
 		return sb;
@@ -141,7 +158,7 @@ public class InstitucionEducativa {
 			
 			int antiguedadEmpleado = anioActual - e.getFechaIngreso().get(Calendar.YEAR);
 			
-			sb += e.getApellidos() + ", " + e.getNombres() + " - Años antigüedad: "+ antiguedadEmpleado + "\n";
+			sb += e.getApellidos() + ", " + e.getNombres() + " - Aï¿½os antigï¿½edad: "+ antiguedadEmpleado + "\n";
 		}
 		
 		return sb;

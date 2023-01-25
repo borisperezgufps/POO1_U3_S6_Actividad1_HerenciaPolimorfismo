@@ -19,8 +19,8 @@ public class Administrativo extends Empleado {
 		this.oficina = oficina;
 	}
 	
-	@Override
-	public double calcularSalario() {
+	
+	public double calcularSalarioAdministrativo() {
 	
 		if(oficina==null) {
 			System.err.println("El administrativo "+getNombres()+" no tiene oficina asociada.");
@@ -28,7 +28,7 @@ public class Administrativo extends Empleado {
 		}
 		
 		if(salarioMinimo<500000) {
-			System.err.println("No se puede calcular el salario al administrativo "+getNombres()+" porque no está asignado el valor del SMMLV.");
+			System.err.println("No se puede calcular el salario al administrativo "+getNombres()+" porque no estï¿½ asignado el valor del SMMLV.");
 			return -1;
 		}
 			

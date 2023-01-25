@@ -19,8 +19,8 @@ public class Limpieza extends Empleado {
 		this.cantidadTurnos = cantidadTurnos;
 	}
 	
-	@Override
-	public double calcularSalario() {
+	
+	public double calcularSalarioLimpieza() {
 		double salario = -1;
 		
 		if(cantidadTurnos>0 && valorTurno>0)		
@@ -28,7 +28,7 @@ public class Limpieza extends Empleado {
 		else
 			System.err.println("No se puede calcular el salario al persona "
 					+ "de limpieza "+getNombres()+", porque no tiene turnos "
-							+ "asignados o el valor del turno no está definido");
+							+ "asignados o el valor del turno no estï¿½ definido");
 		
 		return salario;
 	}

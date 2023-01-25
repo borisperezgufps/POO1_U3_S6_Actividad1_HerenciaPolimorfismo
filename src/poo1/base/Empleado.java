@@ -43,3 +43,13 @@ public class Empleado {
 		return 0;
 	}
 }
+
+
+
+
+
+
+
+
+
+
